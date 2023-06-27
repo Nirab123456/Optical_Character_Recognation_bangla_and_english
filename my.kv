@@ -1,0 +1,41 @@
+#:kivy 1.0.9
+
+<MyBoxLayout>:
+    orientation: 'vertical'
+    spacing: 10
+    padding: 10
+
+    FileChooserListView:
+        id: file_chooser
+        size_hint_y: None
+        height: root.height - 20 
+        width: root.width - 20
+
+    Label:
+        text: "Name"
+    TextInput:
+        id: Name
+        multiline: False
+        height: 40
+        width: root.width
+
+    GridLayout:
+        cols: 2
+        spacing: 10
+
+        Button:
+            text: 'Submit'
+            size_hint: (None, None)
+            height: 40
+            width: 0.5 * root.width
+            on_press: root.submit_pressed(self)
+
+        Button:
+            text: 'Shere_text'
+            size_hint: (None, None)
+            height: 40
+            width: 0.5 * root.width
+            on_press: root.shere_text(self)
+
+<MyApp>:
+    MyBoxLayout:
